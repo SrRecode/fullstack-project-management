@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects — Project Management</title>
+    <meta name="description" content="A dependency-free kanban board for projects and tasks." />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#board">Skip to board</a>
+    <header class="topbar">
+      <h1>Projects</h1>
+      <form id="new-project" class="inline-form">
+        <input name="name" placeholder="New project name" aria-label="New project name" required />
+        <button type="submit">Add project</button>
+      </form>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar" aria-label="Projects">
+        <ul id="project-list" class="project-list"></ul>
+      </aside>
+
+      <section class="board-area">
+        <div class="board-header">
+          <h2 id="board-title">Select a project</h2>
+          <div id="stats" class="stats" aria-live="polite"></div>
+        </div>
+
+        <form id="new-task" class="inline-form" hidden>
+          <input name="title" placeholder="New task" aria-label="New task title" required />
+          <select name="priority" aria-label="Priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+            <option value="urgent">Urgent</option>
+          </select>
+          <input name="assignee" placeholder="Assignee" aria-label="Assignee" />
+          <button type="submit">Add task</button>
+        </form>
+
+        <div id="board" class="board" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "fullstack-project-management",
+  "version": "1.0.0",
+  "description": "A zero-dependency full-stack project management app: JSON API on node:http plus a vanilla JS kanban frontend",
+  "private": true,
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
